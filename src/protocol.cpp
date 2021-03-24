@@ -199,7 +199,7 @@ Uint8 Protocol::getOS()
 Uint16 Protocol::getProtocolVersion()
 {
 	#if CLIENT_OVVERIDE_VERSION > 0
-	return CLIENT_OVVERIDE_VERSION;
+	return CLIENT_OVERRIDE_PROTOCOL_VERSION;
 	#else
 	switch(g_clientVersion)
 	{
