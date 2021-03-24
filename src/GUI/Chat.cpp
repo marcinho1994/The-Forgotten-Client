@@ -444,10 +444,13 @@ void Chat::gameStart()
 
 void Chat::navigateHistory(Sint32 direction)
 {
+	if (m_savedMessages.empty())
+		return;
+
 	Sint32 messagesSize = SDL_static_cast(Sint32, m_savedMessages.size()) - 1;
 	if(m_historyNavigator == SDL_MIN_SINT32)
 	{
-		if(m_savedMessages.empty() || direction > 0)
+		if(direction > 0)
 			return;
 
 		m_historyNavigator = messagesSize + 1;
